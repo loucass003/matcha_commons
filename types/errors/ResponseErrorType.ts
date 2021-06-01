@@ -5,5 +5,6 @@ export enum ResponseErrorType {
   UserInvalidPassword,
   UserNotActivated,
   UserInvalidActivationToken,
+  UserInvalidResetPasswordToken,
   UserAlreadyActivated,
 }

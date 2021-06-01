@@ -10,6 +10,10 @@ export interface IPasswordResetPost {
   reset?: IPasswordResetData;
 }
 
+export interface IPasswordResetResponse {
+  token: string;
+}
+
 const passwordResetSchema = obj.xor(["email", "reset"]).and(
   obj.keys(
     {
