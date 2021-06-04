@@ -1,4 +1,5 @@
 import { obj, optional, required, str } from "../../validation";
+import { ILoginResponse } from "./login";
 
 export interface IPasswordResetData {
   token: string;
@@ -10,9 +11,10 @@ export interface IPasswordResetPost {
   reset?: IPasswordResetData;
 }
 
-export interface IPasswordResetResponse {
-  token: string;
-}
+export type IPasswordResetResponse = ILoginResponse;
+
+const emailRules = required().and(str.is()).and(str.email());
+const passwordRules = required().and(str.is()).and(str.password());
 
 const passwordResetSchema = obj.xor(["email", "reset"]).and(
   obj.keys(
@@ -20,11 +22,11 @@ const passwordResetSchema = obj.xor(["email", "reset"]).and(
       email: optional().and(str.is()).and(str.email()),
       reset: obj.keys({
         token: required().and(str.is()),
-        password: required().and(str.is()).and(str.password()),
+        password: passwordRules,
       }),
     },
     { missing: ["email", "reset"] }
   )
 );
 
-export { passwordResetSchema };
+export { passwordResetSchema, emailRules, passwordRules };
