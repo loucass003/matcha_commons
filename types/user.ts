@@ -5,6 +5,7 @@ export interface IUser {
   password: string;
   email: string;
   activated: boolean;
+  likes?: IUser[];
 }
 
 export interface IUserSession {

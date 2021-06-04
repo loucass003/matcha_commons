@@ -1,5 +1,6 @@
 export enum ResponseErrorType {
   ValidationError,
+  UserNotAuthenticated,
   UserAlreadyExist,
   UserNotFound,
   UserInvalidPassword,
@@ -7,4 +8,5 @@ export enum ResponseErrorType {
   UserInvalidActivationToken,
   UserInvalidResetPasswordToken,
   UserAlreadyActivated,
+  MatchNotFound,
 }
