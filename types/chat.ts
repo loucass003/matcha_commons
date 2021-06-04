@@ -1,6 +1,6 @@
-import { Message } from "../../entity/Message";
 import { required, str } from "../validation";
 import { IDRule } from "./common-rules";
+import { IMessage } from "./message";
 import { PaginatedResponse } from "./PaginatedResponse";
 import { SSEPacket } from "./sse";
 import { IUser } from "./user";
@@ -10,9 +10,9 @@ export type ChatPacket = SSEPacket &
     | {
         type: "init";
         userWith: IUser;
-        conversation: PaginatedResponse<Message>;
+        conversation: PaginatedResponse<IMessage>;
       }
-    | { type: "message"; message: Message }
+    | { type: "message"; message: IMessage }
   );
 
 export interface ISendMessagePost {
