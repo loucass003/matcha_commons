@@ -18,7 +18,6 @@ export function Serialize(instance: any, groups: string[] = []): any {
       const transformedValue =
         (options && options.format && options.format(inst[field])) ||
         inst[field];
-
       return {
         ...obj,
         [field]:
