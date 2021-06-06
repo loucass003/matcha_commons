@@ -1,5 +1,6 @@
 import { required, str } from "../validation";
 import { IDRule } from "./common-rules";
+import { IResponseError } from "./errors/ResponseError";
 import { IMessage } from "./message";
 import { PaginatedResponse } from "./PaginatedResponse";
 import { SSEPacket } from "./sse";
@@ -13,6 +14,7 @@ export type ChatPacket = SSEPacket &
         conversation: PaginatedResponse<IMessage>;
       }
     | { type: "message"; message: IMessage }
+    | { type: "error"; error: IResponseError }
   );
 
 export interface ISendMessagePost {
