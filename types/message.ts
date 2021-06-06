@@ -2,6 +2,6 @@ export interface IMessage {
   id?: number;
   content: string;
   from: number;
-  to: number;
+  conversation: number;
   date?: Date;
 }
