@@ -20,10 +20,6 @@ export interface ISendMessagePost {
   content: string;
 }
 
-export interface IConversationsResponse {
-  conversations: IUser[];
-}
-
 const sendMessageSchema = {
   to: IDRule,
   content: required().and(str.is()).and(str.max(400)),
