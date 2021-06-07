@@ -1,7 +1,7 @@
 export interface IMessage {
   id?: number;
   content: string;
-  from: number;
+  user_from: number;
   conversation: number;
   date?: Date;
 }

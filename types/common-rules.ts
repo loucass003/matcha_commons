@@ -1,9 +1,11 @@
 import { num, required, str } from "../validation";
 
-const IDRule = required()
+const IDParamRule = required()
   .and(str.is())
   .and(num.parse())
   .and(num.is())
   .and(num.isInteger());
 
-export { IDRule };
+const IDRule = required().and(num.is()).and(num.isInteger());
+
+export { IDParamRule, IDRule };
