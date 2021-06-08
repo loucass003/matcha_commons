@@ -7,6 +7,7 @@ export enum ResponseErrorType {
   UserNotActivated,
   UserInvalidActivationToken,
   UserInvalidResetPasswordToken,
+  UserNotInConversation,
   UserAlreadyActivated,
   ConversationNotFound,
   ConversationClosed,
