@@ -3,5 +3,5 @@ export interface IMessage {
   content: string;
   user_from: number;
   conversation: number;
-  date?: Date;
+  date?: number;
 }

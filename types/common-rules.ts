@@ -7,7 +7,7 @@ const IDParamRule = required()
   .and(num.isInteger());
 
 const IDRule = required().and(num.is()).and(num.isInteger());
-const NumberRule = IDRule;
+const NumberRule = IDParamRule;
 const PositiveNumberRule = NumberRule.and(num.min(0));
 
 export { IDParamRule, IDRule, NumberRule, PositiveNumberRule };

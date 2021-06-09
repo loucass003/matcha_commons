@@ -1,3 +1,3 @@
 export type SSEPacket = { type: string };
 
-export type SSEChannel = "chat";
+export type SSEChannel = string;
